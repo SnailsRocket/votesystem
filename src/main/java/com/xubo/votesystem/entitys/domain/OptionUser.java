@@ -1,12 +1,18 @@
 package com.xubo.votesystem.entitys.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
  * 用户投票选项表
  * @TableName option_user
  */
+@TableName("option_user")
+@Builder
 public class OptionUser implements Serializable {
     /**
      * 投票选项id
@@ -26,7 +32,7 @@ public class OptionUser implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     private static final long serialVersionUID = 1L;
 
@@ -75,14 +81,14 @@ public class OptionUser implements Serializable {
     /**
      * 创建时间
      */
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
     /**
      * 创建时间
      */
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 

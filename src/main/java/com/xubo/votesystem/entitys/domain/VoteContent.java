@@ -1,12 +1,20 @@
 package com.xubo.votesystem.entitys.domain;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
+import lombok.Data;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
  * 投票表
  * @TableName vote_content
  */
+@TableName("vote_content")
+@Data
+@Builder
 public class VoteContent implements Serializable {
     /**
      * 
@@ -26,7 +34,7 @@ public class VoteContent implements Serializable {
     /**
      * 过期时间  不设置 默认 24小时
      */
-    private Date expiredTime;
+    private Integer expiredTime;
 
     /**
      * 删除状态
@@ -36,7 +44,7 @@ public class VoteContent implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private LocalDateTime createTime;
 
     /**
      * 创建人id
@@ -46,7 +54,7 @@ public class VoteContent implements Serializable {
     /**
      * 修改时间
      */
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     /**
      * 修改人id
@@ -100,14 +108,14 @@ public class VoteContent implements Serializable {
     /**
      * 过期时间  不设置 默认 24小时
      */
-    public Date getExpiredTime() {
+    public Integer getExpiredTime() {
         return expiredTime;
     }
 
     /**
      * 过期时间  不设置 默认 24小时
      */
-    public void setExpiredTime(Date expiredTime) {
+    public void setExpiredTime(Integer expiredTime) {
         this.expiredTime = expiredTime;
     }
 
@@ -128,14 +136,14 @@ public class VoteContent implements Serializable {
     /**
      * 创建时间
      */
-    public Date getCreateTime() {
+    public LocalDateTime getCreateTime() {
         return createTime;
     }
 
     /**
      * 创建时间
      */
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
@@ -156,14 +164,14 @@ public class VoteContent implements Serializable {
     /**
      * 修改时间
      */
-    public Date getUpdateTime() {
+    public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
     /**
      * 修改时间
      */
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
     }
 

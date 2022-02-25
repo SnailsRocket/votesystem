@@ -23,11 +23,11 @@
     </sql>
 
     <select id="getDetailById" parameterType="java.lang.Integer" resultType="com.xubo.votesystem.entitys.vo.VoteInfoVO">
-        SELECT
+        SELECT  a.content,a.expired_status,b.vote_description,b.id,d.id,d.name
         from vote_content a
-        left join cote_content_options b on a.id = b.vote_id
+        left join vote_content_options b on a.id = b.vote_id
         left join option_user c on b.id = c.option_id
         left join user d on c.user_id = d.id
-        where
+        where b.del_status = 0 and c.del_status = 0 and a.id = #{voteId}
     </select>
 </mapper>

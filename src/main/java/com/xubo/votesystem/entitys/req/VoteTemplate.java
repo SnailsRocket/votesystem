@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -28,7 +29,9 @@ public class VoteTemplate {
     /**
      * 投票选项
      */
-    private List<VoteOption> voreOptions;
+    private List<VoteOption> voteOptions;
+
+    private Integer expiredHours;
 
     /**
      * 创建人Id

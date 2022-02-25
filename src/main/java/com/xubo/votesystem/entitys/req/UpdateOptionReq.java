@@ -5,27 +5,21 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
 /**
  * @Author xubo
- * @Date 2022/2/24 17:02
+ * @Date 2022/2/25 11:34
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class VoteUpdateReq {
+public class UpdateOptionReq {
 
     private Integer voteId;
 
-    private String content;
+    private Integer newOptionId;
 
-    private List<VoteOption> options;
+    private Integer oldOptionId;
 
-    private LocalDateTime updateTime;
-
-    private Integer updateUser;
-
+    private Integer userId;
 }
