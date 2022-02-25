@@ -21,4 +21,13 @@
         expired_time,del_status,create_time,
         create_user,update_time,update_user
     </sql>
+
+    <select id="getDetailById" parameterType="java.lang.Integer" resultType="com.xubo.votesystem.entitys.vo.VoteInfoVO">
+        SELECT
+        from vote_content a
+        left join cote_content_options b on a.id = b.vote_id
+        left join option_user c on b.id = c.option_id
+        left join user d on c.user_id = d.id
+        where
+    </select>
 </mapper>
