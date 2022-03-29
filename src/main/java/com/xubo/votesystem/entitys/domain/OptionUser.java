@@ -3,9 +3,14 @@ package com.xubo.votesystem.entitys.domain;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Builder;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 用户投票选项表
@@ -135,4 +140,24 @@ public class OptionUser implements Serializable {
         sb.append("]");
         return sb.toString();
     }
+
+    public static void recordFile(List<Integer> recordList) {
+        File file = new File("D:\\easyexcel\\file\\success.txt");
+        FileWriter fileWriter = null;
+
+        try {
+            fileWriter = new FileWriter("D:\\easyexcel\\file\\success.txt", true);
+            System.out.println(recordList.toString());
+            fileWriter.write(recordList.toString());
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Integer> arrList = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+        recordFile(arrList);
+    }
+
 }

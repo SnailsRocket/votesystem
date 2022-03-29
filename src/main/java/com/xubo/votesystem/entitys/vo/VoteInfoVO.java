@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
  * @Date 2022/2/24 17:36
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
 public class VoteInfoVO extends VoteTemplate {
 
 }
